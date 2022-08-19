@@ -8,7 +8,7 @@ class AppBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: AppColors.salmao,
-      title: const Center(child: Text('HEITAS')),
+      title: const Center(child: Text('NUTRI APP')),
       leading: const Icon(Icons.menu),
       actions: const [
         Padding(

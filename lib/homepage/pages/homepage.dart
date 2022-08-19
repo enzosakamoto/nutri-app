@@ -19,7 +19,7 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const PreferredSize(
-          child: AppBarWidget(), preferredSize: Size.fromHeight(50)),
+          preferredSize: Size.fromHeight(50), child: AppBarWidget()),
       body: Column(
         children: [
           const SizedBox(
@@ -88,11 +88,16 @@ class _HomepageState extends State<Homepage> {
                         )
                       ]),
                   child: Center(
-                    child: GestureDetector(
-                      onTap: () {},
-                      child: const Text(
-                        'Enviar!',
-                        style: TextStyle(fontSize: 16, color: Colors.white),
+                    child: MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: GestureDetector(
+                        onTap: () {
+                          print('CLICK');
+                        },
+                        child: const Text(
+                          'Enviar!',
+                          style: TextStyle(fontSize: 16, color: Colors.white),
+                        ),
                       ),
                     ),
                   ),
