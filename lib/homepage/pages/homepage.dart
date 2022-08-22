@@ -14,6 +14,7 @@ class _HomepageState extends State<Homepage> {
   TextEditingController controller = TextEditingController();
   String? itemSelecionado;
   RepositoryMock repositorio = RepositoryMock();
+  bool isVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -92,6 +93,9 @@ class _HomepageState extends State<Homepage> {
                       cursor: SystemMouseCursors.click,
                       child: GestureDetector(
                         onTap: () {
+                          setState(() {
+                            isVisible = !isVisible;
+                          });
                           print('CLICK');
                         },
                         child: const Text(
@@ -100,6 +104,19 @@ class _HomepageState extends State<Homepage> {
                         ),
                       ),
                     ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                Visibility(
+                  visible: isVisible,
+                  child: Container(
+                    width: 200,
+                    height: 200,
+                    decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('assets/images/heitor.png'))),
                   ),
                 ),
               ],
