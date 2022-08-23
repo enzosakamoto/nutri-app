@@ -6,8 +6,8 @@ class TabelaNutricionalWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200,
-      height: 200,
+      width: 500,
+      height: 300,
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: [
@@ -17,6 +17,9 @@ class TabelaNutricionalWidget extends StatelessWidget {
             blurRadius: 5,
           )
         ],
+      ),
+      child: Row(
+        children: [Image.asset('assets/images/heitor.png')],
       ),
     );
   }
