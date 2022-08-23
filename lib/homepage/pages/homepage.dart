@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nutri_app/database/repository_mock/repository_mock.dart';
+import 'package:nutri_app/homepage/widgets/tabela_nutricional_widget.dart';
 import 'package:nutri_app/shared/themes/appcolors.dart';
 import 'package:nutri_app/shared/widgets/appbar_widget.dart';
 
@@ -14,7 +15,7 @@ class _HomepageState extends State<Homepage> {
   TextEditingController controller = TextEditingController();
   String? itemSelecionado;
   RepositoryMock repositorio = RepositoryMock();
-  bool isVisible = false;
+  bool isVisible = true;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +42,7 @@ class _HomepageState extends State<Homepage> {
                         ),
                       ),
                       value: itemSelecionado,
-                      items: repositorio.alimentos
+                      items: repositorio.nomes_alimentos
                           .map((item) => DropdownMenuItem<String>(
                                 value: item,
                                 child: Text(
@@ -96,7 +97,6 @@ class _HomepageState extends State<Homepage> {
                           setState(() {
                             isVisible = !isVisible;
                           });
-                          print('CLICK');
                         },
                         child: const Text(
                           'Enviar!',
@@ -111,13 +111,7 @@ class _HomepageState extends State<Homepage> {
                 ),
                 Visibility(
                   visible: isVisible,
-                  child: Container(
-                    width: 200,
-                    height: 200,
-                    decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage('assets/images/heitor.png'))),
-                  ),
+                  child: TabelaNutricionalWidget(),
                 ),
               ],
             ),
