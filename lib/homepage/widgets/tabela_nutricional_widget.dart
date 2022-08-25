@@ -5,9 +5,11 @@ import 'package:nutri_app/homepage/widgets/valores_tabela_widget.dart';
 import 'package:nutri_app/shared/themes/text_styles.dart';
 
 class TabelaNutricionalWidget extends StatelessWidget {
-  const TabelaNutricionalWidget({Key? key, required this.alimento})
+  const TabelaNutricionalWidget(
+      {Key? key, required this.alimento, required this.gramas})
       : super(key: key);
   final Alimento alimento;
+  final String gramas;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +44,7 @@ class TabelaNutricionalWidget extends StatelessWidget {
                   children: [
                     Flexible(
                       child: Text(
-                        'Tabela Nutricional do ${alimento.nome} (porção de 100g)',
+                        'Tabela Nutricional do ${alimento.nome} (porção de ${gramas}g)',
                         style: AppTextStyles.titulosBold,
                         overflow: TextOverflow.ellipsis,
                       ),

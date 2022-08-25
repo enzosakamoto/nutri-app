@@ -121,7 +121,10 @@ class _HomepageState extends State<Homepage> {
                 ),
                 Visibility(
                   visible: isVisible,
-                  child: TabelaNutricionalWidget(alimento: alimento),
+                  child: TabelaNutricionalWidget(
+                    alimento: alimento,
+                    gramas: "140",
+                  ),
                 ),
               ],
             ),
