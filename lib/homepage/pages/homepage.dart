@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nutri_app/database/alimento/alimento.dart';
 import 'package:nutri_app/database/repository_mock/repository_mock.dart';
 import 'package:nutri_app/homepage/widgets/tabela_nutricional_widget.dart';
 import 'package:nutri_app/shared/themes/appcolors.dart';
@@ -15,7 +16,9 @@ class _HomepageState extends State<Homepage> {
   TextEditingController controller = TextEditingController();
   String? itemSelecionado;
   RepositoryMock repositorio = RepositoryMock();
-  bool isVisible = true;
+  bool isVisible = false;
+  Alimento alimento =
+      Alimento('ERROR', 0, 0, 0, 0, 0, 0, 0, 0, 'assets/images/heitor.png');
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +45,7 @@ class _HomepageState extends State<Homepage> {
                         ),
                       ),
                       value: itemSelecionado,
-                      items: repositorio.nomes_alimentos
+                      items: repositorio.nomesAlimentos
                           .map((item) => DropdownMenuItem<String>(
                                 value: item,
                                 child: Text(
@@ -95,7 +98,13 @@ class _HomepageState extends State<Homepage> {
                       child: GestureDetector(
                         onTap: () {
                           setState(() {
-                            isVisible = !isVisible;
+                            if (itemSelecionado == null) {
+                              print('erro');
+                            } else {
+                              isVisible = true;
+                              alimento =
+                                  procuraAlimento(itemSelecionado.toString());
+                            }
                           });
                         },
                         child: const Text(
@@ -111,7 +120,7 @@ class _HomepageState extends State<Homepage> {
                 ),
                 Visibility(
                   visible: isVisible,
-                  child: TabelaNutricionalWidget(),
+                  child: TabelaNutricionalWidget(alimento: alimento),
                 ),
               ],
             ),

@@ -8,7 +8,17 @@ class Alimento {
   double gtrans;
   double fibra;
   double sodio;
+  String caminhoImagem;
 
-  Alimento(this.nome, this.kcal, this.carboidratos, this.proteinas, this.gtotais,
-      this.gsaturadas, this.gtrans, this.fibra, this.sodio);
+  Alimento(
+      this.nome,
+      this.kcal,
+      this.carboidratos,
+      this.proteinas,
+      this.gtotais,
+      this.gsaturadas,
+      this.gtrans,
+      this.fibra,
+      this.sodio,
+      this.caminhoImagem);
 }
