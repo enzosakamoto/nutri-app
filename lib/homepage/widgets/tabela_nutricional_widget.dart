@@ -9,7 +9,7 @@ class TabelaNutricionalWidget extends StatelessWidget {
       {Key? key, required this.alimento, required this.gramas})
       : super(key: key);
   final Alimento alimento;
-  final String gramas;
+  final double gramas;
 
   @override
   Widget build(BuildContext context) {

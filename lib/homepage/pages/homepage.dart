@@ -17,6 +17,7 @@ class _HomepageState extends State<Homepage> {
   String? itemSelecionado;
   RepositoryMock repositorio = RepositoryMock();
   bool isVisible = false;
+  double gramas = 100;
   Alimento alimento =
       Alimento('ERROR', 0, 0, 0, 0, 0, 0, 0, 0, 'assets/images/heitor.png');
 
@@ -65,6 +66,9 @@ class _HomepageState extends State<Homepage> {
                 SizedBox(
                   width: 300,
                   child: TextFormField(
+                    onChanged: (value) {
+                      gramas = double.parse(value);
+                    },
                     controller: controller,
                     decoration: InputDecoration(
                       label: const Text('Gramas'),
@@ -123,7 +127,7 @@ class _HomepageState extends State<Homepage> {
                   visible: isVisible,
                   child: TabelaNutricionalWidget(
                     alimento: alimento,
-                    gramas: "140",
+                    gramas: gramas,
                   ),
                 ),
               ],
