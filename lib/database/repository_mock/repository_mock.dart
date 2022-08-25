@@ -1,7 +1,6 @@
 import 'package:nutri_app/database/alimento/alimento.dart';
 
 class RepositoryMock {
-  List<String> nomesAlimentos = ['Frango', 'Arroz', 'Feijão'];
 
   List<Alimento> alimentos = [
     Alimento(
@@ -27,4 +26,26 @@ Alimento procuraAlimento(String nome) {
     }
   }
   return error;
+}
+
+List<String> retornaNomes(List<Alimento> alimentos) {
+  List<String> nomes = [];
+  for (int i = 0; i < alimentos.length; i++) {
+    nomes.insert(i, alimentos[i].nome);
+  }
+  return nomes;
+}
+
+bool isNumeric(String string) {
+  // Null or empty string is not a number
+  if (string.isEmpty) {
+    return false;
+  }
+  final number = num.tryParse(string);
+
+  if (number == null) {
+    return false;
+  }
+
+  return true;
 }

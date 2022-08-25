@@ -45,7 +45,7 @@ class _HomepageState extends State<Homepage> {
                         ),
                       ),
                       value: itemSelecionado,
-                      items: repositorio.nomesAlimentos
+                      items: retornaNomes(repositorio.alimentos)
                           .map((item) => DropdownMenuItem<String>(
                                 value: item,
                                 child: Text(
@@ -98,8 +98,9 @@ class _HomepageState extends State<Homepage> {
                       child: GestureDetector(
                         onTap: () {
                           setState(() {
-                            if (itemSelecionado == null) {
-                              print('erro');
+                            if (itemSelecionado == null ||
+                                isNumeric(controller.toString())) {
+                              print('popup');
                             } else {
                               isVisible = true;
                               alimento =
