@@ -13,7 +13,7 @@ class ValoresTabelaWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          '${alimento.kcal} kcal',
+          '${alimento.kcal.toStringAsFixed(2)} kcal',
           style: AppTextStyles.normal,
           overflow: TextOverflow.ellipsis,
         ),
@@ -21,7 +21,7 @@ class ValoresTabelaWidget extends StatelessWidget {
           height: 5,
         ),
         Text(
-          '${alimento.carboidratos} g',
+          '${alimento.carboidratos.toStringAsFixed(2)} g',
           style: AppTextStyles.normal,
           overflow: TextOverflow.ellipsis,
         ),
@@ -29,7 +29,7 @@ class ValoresTabelaWidget extends StatelessWidget {
           height: 5,
         ),
         Text(
-          '${alimento.proteinas} g',
+          '${alimento.proteinas.toStringAsFixed(2)} g',
           style: AppTextStyles.normal,
           overflow: TextOverflow.ellipsis,
         ),
@@ -37,7 +37,7 @@ class ValoresTabelaWidget extends StatelessWidget {
           height: 5,
         ),
         Text(
-          '${alimento.gtotais} g',
+          '${alimento.gtotais.toStringAsFixed(2)} g',
           style: AppTextStyles.normal,
           overflow: TextOverflow.ellipsis,
         ),
@@ -45,7 +45,7 @@ class ValoresTabelaWidget extends StatelessWidget {
           height: 5,
         ),
         Text(
-          '${alimento.gsaturadas} g',
+          '${alimento.gsaturadas.toStringAsFixed(2)} g',
           style: AppTextStyles.normal,
           overflow: TextOverflow.ellipsis,
         ),
@@ -53,7 +53,7 @@ class ValoresTabelaWidget extends StatelessWidget {
           height: 5,
         ),
         Text(
-          '${alimento.gtrans} g',
+          '${alimento.gtrans.toStringAsFixed(2)} g',
           style: AppTextStyles.normal,
           overflow: TextOverflow.ellipsis,
         ),
@@ -61,7 +61,7 @@ class ValoresTabelaWidget extends StatelessWidget {
           height: 5,
         ),
         Text(
-          '${alimento.fibra} g',
+          '${alimento.fibra.toStringAsFixed(2)} g',
           style: AppTextStyles.normal,
           overflow: TextOverflow.ellipsis,
         ),
@@ -69,7 +69,7 @@ class ValoresTabelaWidget extends StatelessWidget {
           height: 5,
         ),
         Text(
-          '${alimento.sodio} mg',
+          '${alimento.sodio.toStringAsFixed(2)} mg',
           style: AppTextStyles.normal,
           overflow: TextOverflow.ellipsis,
         ),

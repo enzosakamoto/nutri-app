@@ -1,7 +1,6 @@
 import 'package:nutri_app/database/alimento/alimento.dart';
 
 class RepositoryMock {
-
   List<Alimento> alimentos = [
     Alimento(
         'Frango', 159, 0, 32, 2.4, 0.9, 0, 0, 52, 'assets/images/frango.jpeg'),
@@ -48,4 +47,19 @@ bool isNumeric(String string) {
   }
 
   return true;
+}
+
+Alimento regrade3(Alimento alimento, double gramas) {
+  Alimento aux = Alimento('', 0, 0, 0, 0, 0, 0, 0, 0, '');
+  aux.nome = alimento.nome;
+  aux.kcal = (gramas * alimento.kcal) / 100;
+  aux.carboidratos = (gramas * alimento.carboidratos) / 100;
+  aux.proteinas = (gramas * alimento.proteinas) / 100;
+  aux.gtotais = (gramas * alimento.gtotais) / 100;
+  aux.gsaturadas = (gramas * alimento.gsaturadas) / 100;
+  aux.gtrans = (gramas * alimento.gtrans) / 100;
+  aux.fibra = (gramas * alimento.fibra) / 100;
+  aux.sodio = (gramas * alimento.sodio) / 100;
+  aux.caminhoImagem = alimento.caminhoImagem;
+  return aux;
 }
