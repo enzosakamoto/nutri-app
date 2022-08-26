@@ -9,7 +9,8 @@ class AppBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: AppColors.salmao,
-      title: const Center(child: Text('NUTRI APP')),
+      title: const Text('NUTRI APP'),
+      centerTitle: true,
       actions: const [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16),
