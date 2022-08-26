@@ -15,15 +15,6 @@ class Datapage extends StatelessWidget {
           preferredSize: Size.fromHeight(50), child: AppBarWidget()),
       body: ListView(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: const [
-                IconHomeWidget(),
-              ],
-            ),
-          ),
           ListView.builder(
             shrinkWrap: true,
             physics: const BouncingScrollPhysics(),

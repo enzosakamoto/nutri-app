@@ -10,7 +10,6 @@ class AppBarWidget extends StatelessWidget {
     return AppBar(
       backgroundColor: AppColors.salmao,
       title: const Center(child: Text('NUTRI APP')),
-      leading: const Icon(Icons.menu),
       actions: const [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16),

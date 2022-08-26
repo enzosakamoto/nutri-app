@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nutri_app/database/alimento/alimento.dart';
 import 'package:nutri_app/database/repository_mock/repository_mock.dart';
+import 'package:nutri_app/shared/widgets/drawer_widget.dart';
 import 'package:nutri_app/shared/widgets/tabela_nutricional_widget.dart';
 import 'package:nutri_app/shared/themes/appcolors.dart';
 import 'package:nutri_app/shared/widgets/appbar_widget.dart';
@@ -24,6 +25,7 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const DrawerWidget(),
       appBar: const PreferredSize(
           preferredSize: Size.fromHeight(50), child: AppBarWidget()),
       body: Column(
@@ -68,6 +70,7 @@ class _HomepageState extends State<Homepage> {
                   child: TextFormField(
                     onChanged: (value) {
                       gramas = double.parse(value);
+                      if (value == '' || value == ' ') gramas = 100;
                     },
                     controller: controller,
                     decoration: InputDecoration(
