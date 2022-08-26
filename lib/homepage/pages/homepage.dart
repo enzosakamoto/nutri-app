@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nutri_app/database/alimento/alimento.dart';
 import 'package:nutri_app/database/repository_mock/repository_mock.dart';
-import 'package:nutri_app/homepage/widgets/tabela_nutricional_widget.dart';
+import 'package:nutri_app/shared/widgets/tabela_nutricional_widget.dart';
 import 'package:nutri_app/shared/themes/appcolors.dart';
 import 'package:nutri_app/shared/widgets/appbar_widget.dart';
 

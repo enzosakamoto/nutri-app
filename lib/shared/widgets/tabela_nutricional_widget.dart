@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nutri_app/database/alimento/alimento.dart';
 import 'package:nutri_app/database/repository_mock/repository_mock.dart';
-import 'package:nutri_app/homepage/widgets/categorias_widget.dart';
-import 'package:nutri_app/homepage/widgets/valores_tabela_widget.dart';
+import 'package:nutri_app/shared/widgets/categorias_widget.dart';
+import 'package:nutri_app/shared/widgets/valores_tabela_widget.dart';
 import 'package:nutri_app/shared/themes/text_styles.dart';
 
 class TabelaNutricionalWidget extends StatelessWidget {
