@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nutri_app/historypage/page/historypage.dart';
+import 'package:nutri_app/homepage/pages/homepage.dart';
 
 Widget menuItemWidget({
   required String texto,
@@ -22,6 +23,10 @@ void selectedItem(BuildContext context, int index) {
   Navigator.of(context).pop();
   switch (index) {
     case 0:
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => const Homepage()));
+      break;
+    case 1:
       Navigator.of(context)
           .push(MaterialPageRoute(builder: (context) => const Historypage()));
       break;

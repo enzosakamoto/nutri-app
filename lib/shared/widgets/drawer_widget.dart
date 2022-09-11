@@ -34,12 +34,26 @@ class DrawerWidget extends StatelessWidget {
               child: Column(
                 children: [
                   menuItemWidget(
-                      texto: 'Histórico',
-                      icone: Icons.history,
+                      texto: 'Home',
+                      icone: Icons.home,
                       onClicked: () => selectedItem(context, 0)),
                 ],
               ),
-            )
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                children: [
+                  menuItemWidget(
+                      texto: 'Histórico',
+                      icone: Icons.history,
+                      onClicked: () => selectedItem(context, 1)),
+                ],
+              ),
+            ),
           ],
         ),
       ),
