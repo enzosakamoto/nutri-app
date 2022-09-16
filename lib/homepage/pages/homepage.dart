@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nutri_app/database/alimento/alimento.dart';
 import 'package:nutri_app/database/repository_mock/repository_mock.dart';
+import 'package:nutri_app/homepage/widgets/popup_widget.dart';
 import 'package:nutri_app/shared/widgets/drawer_widget.dart';
+import 'package:nutri_app/shared/widgets/footer.dart';
 import 'package:nutri_app/shared/widgets/tabela_nutricional_widget.dart';
 import 'package:nutri_app/shared/themes/appcolors.dart';
 import 'package:nutri_app/shared/widgets/appbar_widget.dart';
@@ -25,11 +27,30 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //bottomNavigationBar: const FooterWidget(),
       drawer: const DrawerWidget(),
       appBar: const PreferredSize(
           preferredSize: Size.fromHeight(50), child: AppBarWidget()),
-      body: Column(
+      body: ListView(
         children: [
+          const SizedBox(
+            height: 50,
+          ),
+          const Text(
+            'Conversão de valores nutricionais',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+            overflow: TextOverflow.fade,
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24),
+            child: Text(
+              'Escolha um alimento do banco de dados e digite um valor de massa',
+              style: TextStyle(fontSize: 20),
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.fade,
+            ),
+          ),
           const SizedBox(
             height: 50,
           ),
@@ -69,10 +90,17 @@ class _HomepageState extends State<Homepage> {
                   width: 300,
                   child: TextFormField(
                     onChanged: (value) {
-                      gramas = double.parse(value);
                       if (value == '' || value == ' ') gramas = 100;
+                      if (value != '' && value != ' ') {
+                        if (isNumeric(value)) {
+                          gramas = double.parse(value);
+                        } else {
+                          showDialog(
+                              context: context,
+                              builder: (context) => const PopupWidget());
+                        }
+                      }
                     },
-                    controller: controller,
                     decoration: InputDecoration(
                       label: const Text('Gramas'),
                       enabledBorder: OutlineInputBorder(
@@ -133,6 +161,9 @@ class _HomepageState extends State<Homepage> {
                     gramas: gramas,
                   ),
                 ),
+                const SizedBox(
+                  height: 50,
+                ),
               ],
             ),
           ),
@@ -140,4 +171,11 @@ class _HomepageState extends State<Homepage> {
       ),
     );
   }
+}
+
+bool isNumeric(String s) {
+  if (s == null) {
+    return false;
+  }
+  return double.tryParse(s) != null;
 }

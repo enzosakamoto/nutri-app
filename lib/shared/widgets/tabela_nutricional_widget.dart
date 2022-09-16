@@ -15,6 +15,7 @@ class TabelaNutricionalWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 444,
       margin: const EdgeInsets.symmetric(horizontal: 10),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -29,45 +30,41 @@ class TabelaNutricionalWidget extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.all(16),
-        child: Row(
+        child: Column(
           children: [
             ConstrainedBox(
                 constraints:
                     const BoxConstraints(maxWidth: 150, maxHeight: 150),
                 child: Image.asset(alimento.caminhoImagem)),
             const SizedBox(
-              width: 30,
+              height: 30,
             ),
-            Expanded(
-                child: Column(
+            Row(
               children: [
-                Row(
-                  children: [
-                    Flexible(
-                      child: Text(
-                        'Tabela Nutricional do ${alimento.nome} (porção de ${gramas}g)',
-                        style: AppTextStyles.titulosBold,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                  ],
-                ),
-                const Divider(
-                  thickness: 1,
-                  color: Colors.black,
-                ),
-                const SizedBox(
-                  height: 7,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const CategoriasTabelaWidget(),
-                    ValoresTabelaWidget(alimento: regrade3(alimento, gramas)),
-                  ],
+                Flexible(
+                  child: Text(
+                    'Tabela Nutricional do ${alimento.nome} (porção de ${gramas}g)',
+                    style: AppTextStyles.titulosBold,
+                    overflow: TextOverflow.fade,
+                    maxLines: 2,
+                  ),
                 ),
               ],
-            ))
+            ),
+            const Divider(
+              thickness: 1,
+              color: Colors.black,
+            ),
+            const SizedBox(
+              height: 7,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const CategoriasTabelaWidget(),
+                ValoresTabelaWidget(alimento: regrade3(alimento, gramas)),
+              ],
+            )
           ],
         ),
       ),
