@@ -36,11 +36,14 @@ class _HomepageState extends State<Homepage> {
           const SizedBox(
             height: 50,
           ),
-          const Text(
-            'Conversão de valores nutricionais',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
-            overflow: TextOverflow.fade,
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: Text(
+              'Conversão de valores nutricionais',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.fade,
+            ),
           ),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 24),
@@ -58,55 +61,62 @@ class _HomepageState extends State<Homepage> {
             child: Column(
               children: [
                 SizedBox(
-                    width: 300,
-                    child: DropdownButtonFormField<String>(
+                    child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 32),
+                  child: DropdownButtonFormField<String>(
+                    isExpanded: true,
+                    iconSize: 0,
+                    decoration: InputDecoration(
+                      label: const Text('Alimentos'),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide:
+                            const BorderSide(width: 3, color: AppColors.salmao),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                    ),
+                    value: itemSelecionado,
+                    items: retornaNomes(repositorio.alimentos)
+                        .map((item) => DropdownMenuItem<String>(
+                              value: item,
+                              child: Text(
+                                item,
+                                style: const TextStyle(fontSize: 15),
+                                overflow: TextOverflow.fade,
+                              ),
+                            ))
+                        .toList(),
+                    onChanged: (item) => setState(() {
+                      itemSelecionado = item;
+                      print(itemSelecionado);
+                    }),
+                  ),
+                )),
+                const SizedBox(
+                  height: 20,
+                ),
+                SizedBox(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 32),
+                    child: TextFormField(
+                      onChanged: (value) {
+                        if (value == '' || value == ' ') gramas = 100;
+                        if (value != '' && value != ' ') {
+                          if (isNumeric(value)) {
+                            gramas = double.parse(value);
+                          } else {
+                            showDialog(
+                                context: context,
+                                builder: (context) => const PopupWidget());
+                          }
+                        }
+                      },
                       decoration: InputDecoration(
-                        label: const Text('Alimentos'),
+                        label: const Text('Gramas'),
                         enabledBorder: OutlineInputBorder(
                           borderSide: const BorderSide(
                               width: 3, color: AppColors.salmao),
                           borderRadius: BorderRadius.circular(15),
                         ),
-                      ),
-                      value: itemSelecionado,
-                      items: retornaNomes(repositorio.alimentos)
-                          .map((item) => DropdownMenuItem<String>(
-                                value: item,
-                                child: Text(
-                                  item,
-                                  style: const TextStyle(fontSize: 16),
-                                ),
-                              ))
-                          .toList(),
-                      onChanged: (item) => setState(() {
-                        itemSelecionado = item;
-                        print(itemSelecionado);
-                      }),
-                    )),
-                const SizedBox(
-                  height: 20,
-                ),
-                SizedBox(
-                  width: 300,
-                  child: TextFormField(
-                    onChanged: (value) {
-                      if (value == '' || value == ' ') gramas = 100;
-                      if (value != '' && value != ' ') {
-                        if (isNumeric(value)) {
-                          gramas = double.parse(value);
-                        } else {
-                          showDialog(
-                              context: context,
-                              builder: (context) => const PopupWidget());
-                        }
-                      }
-                    },
-                    decoration: InputDecoration(
-                      label: const Text('Gramas'),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide:
-                            const BorderSide(width: 3, color: AppColors.salmao),
-                        borderRadius: BorderRadius.circular(15),
                       ),
                     ),
                   ),

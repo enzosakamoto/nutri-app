@@ -2,12 +2,12 @@ import 'package:nutri_app/database/alimento/alimento.dart';
 
 class RepositoryMock {
   List<Alimento> alimentos = [
-    Alimento(
-        'Frango', 159, 0, 32, 2.4, 0.9, 0, 0, 52, 'assets/images/frango.jpg'),
-    Alimento('Arroz', 128.3, 28.1, 2.5, 2.4, 0.2, 0.2, 1.6, 1,
+    Alimento('Frango grelhado', 159, 0, 32, 2.4, 0.9, 0, 0, 52,
+        'assets/images/frango.jpg'),
+    Alimento('Arroz branco cozido', 128.3, 28.1, 2.5, 2.4, 0.2, 0.2, 1.6, 1,
         'assets/images/arroz.jpg'),
-    Alimento(
-        'Feijão', 164, 29, 9.5, 1.4, 0, 0, 8.6, 91, 'assets/images/feijao.jpg'),
+    Alimento('Feijão carioca cozido', 164, 29, 9.5, 1.4, 0, 0, 8.6, 91,
+        'assets/images/feijao.jpg'),
   ];
 
   RepositoryMock();
