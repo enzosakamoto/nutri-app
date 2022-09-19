@@ -17,5 +17,6 @@ Mais opções de alimentos (database)
 
 ## Interface
 <p align="center">
-<img src="https://user-images.githubusercontent.com/98707474/190867710-92a5205e-a4e4-4c6a-b328-687d803d483f.png">
+<img src="https://user-images.githubusercontent.com/98707474/190944240-0544e155-7024-4414-bbeb-2079beeb3acd.png">
+<img src="https://user-images.githubusercontent.com/98707474/190944225-b5c053ce-820f-4fb3-907c-764afabc0ab7.png">
 </p>
