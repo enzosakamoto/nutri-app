@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nutri_app/database/singleton/usuario_singleton.dart';
 import 'package:nutri_app/shared/themes/appcolors.dart';
 import 'package:nutri_app/shared/widgets/header.dart';
 import 'package:nutri_app/shared/widgets/menu_item_widget.dart';
@@ -9,22 +10,20 @@ class DrawerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const nome = 'Heitor Mariano';
-    const email = 'heitas.marias@gmail.com';
-    const avatar = 'assets/images/heitor.png';
+    UsuarioSingleton usuario = UsuarioSingleton();
     return Drawer(
       child: Material(
         color: AppColors.salmao,
         child: ListView(
           children: [
             headerBuilder(
-                avatar: avatar,
-                nome: nome,
-                email: email,
+                avatar: usuario.avatar,
+                nome: usuario.nome,
+                email: usuario.email,
                 onClicked: () => Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const Userpage(
-                          avatar: avatar,
-                          nome: nome,
+                    builder: (context) => Userpage(
+                          avatar: usuario.avatar,
+                          nome: usuario.nome,
                         )))),
             const SizedBox(
               height: 20,

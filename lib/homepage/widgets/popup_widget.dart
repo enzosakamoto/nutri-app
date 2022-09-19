@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
 class PopupWidget extends StatelessWidget {
-  const PopupWidget({Key? key}) : super(key: key);
+  const PopupWidget({Key? key, required this.texto}) : super(key: key);
+  final String texto;
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
       title: const Text('Aviso'),
-      content: const Text('Por favor, digite um valor válido!'),
+      content: Text(texto),
       actions: [
         TextButton(
             onPressed: () {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nutri_app/database/alimento/alimento.dart';
+import 'package:nutri_app/database/modules/alimento/alimento.dart';
 import 'package:nutri_app/shared/themes/text_styles.dart';
 
 class ValoresTabelaWidget extends StatelessWidget {

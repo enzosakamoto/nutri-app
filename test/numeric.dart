@@ -1,7 +1,4 @@
 bool isNumeric(String s) {
-  if (s == null) {
-    return false;
-  }
   return double.tryParse(s) != null;
 }
 
@@ -12,6 +9,8 @@ void main() {
   bool teste1 = isNumeric(numero);
   bool teste2 = isNumeric(naoEnumero);
 
+  // ignore: avoid_print
   print(teste1);
+  // ignore: avoid_print
   print(teste2);
 }

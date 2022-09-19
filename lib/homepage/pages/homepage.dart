@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:nutri_app/database/alimento/alimento.dart';
+import 'package:nutri_app/database/modules/alimento/alimento.dart';
 import 'package:nutri_app/database/repository_mock/repository_mock.dart';
+import 'package:nutri_app/database/singleton/usuario_singleton.dart';
 import 'package:nutri_app/homepage/widgets/popup_widget.dart';
 import 'package:nutri_app/shared/widgets/drawer_widget.dart';
-import 'package:nutri_app/shared/widgets/footer.dart';
 import 'package:nutri_app/shared/widgets/tabela_nutricional_widget.dart';
 import 'package:nutri_app/shared/themes/appcolors.dart';
 import 'package:nutri_app/shared/widgets/appbar_widget.dart';
@@ -18,6 +18,7 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   TextEditingController controller = TextEditingController();
   String? itemSelecionado;
+  UsuarioSingleton usuario = UsuarioSingleton();
   RepositoryMock repositorio = RepositoryMock();
   bool isVisible = false;
   double gramas = 100;
@@ -30,7 +31,10 @@ class _HomepageState extends State<Homepage> {
       //bottomNavigationBar: const FooterWidget(),
       drawer: const DrawerWidget(),
       appBar: const PreferredSize(
-          preferredSize: Size.fromHeight(50), child: AppBarWidget()),
+          preferredSize: Size.fromHeight(50),
+          child: AppBarWidget(
+            titulo: 'NUTRI APP',
+          )),
       body: ListView(
         children: [
           const SizedBox(
@@ -87,7 +91,7 @@ class _HomepageState extends State<Homepage> {
                         .toList(),
                     onChanged: (item) => setState(() {
                       itemSelecionado = item;
-                      print(itemSelecionado);
+                      // print(itemSelecionado);
                     }),
                   ),
                 )),
@@ -106,7 +110,10 @@ class _HomepageState extends State<Homepage> {
                           } else {
                             showDialog(
                                 context: context,
-                                builder: (context) => const PopupWidget());
+                                builder: (context) => const PopupWidget(
+                                      texto:
+                                          'Por favor, digite um valor válido!',
+                                    ));
                           }
                         }
                       },
@@ -143,13 +150,19 @@ class _HomepageState extends State<Homepage> {
                       child: GestureDetector(
                         onTap: () {
                           setState(() {
-                            if (itemSelecionado == null ||
-                                isNumeric(controller.toString())) {
-                              print('popup');
+                            if (itemSelecionado == null) {
+                              showDialog(
+                                  context: context,
+                                  builder: (context) => const PopupWidget(
+                                        texto:
+                                            'Por favor, selecione um alimento!',
+                                      ));
                             } else {
                               isVisible = true;
                               alimento =
                                   procuraAlimento(itemSelecionado.toString());
+                              usuario.adicionaALimento(alimento);
+                              usuario.adicionaGramas(gramas);
                             }
                           });
                         },
@@ -184,8 +197,5 @@ class _HomepageState extends State<Homepage> {
 }
 
 bool isNumeric(String s) {
-  if (s == null) {
-    return false;
-  }
   return double.tryParse(s) != null;
 }

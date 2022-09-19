@@ -2,11 +2,17 @@
 
 Aplicativo que armazena diversos dados sobre alimentos (tabelas nutricionais) e converte valores nutricionais em função da massa digitada.
 
+## New Features
+<ol>
+Usuário<br/>
+Histórico do Usuário<br/>
+Mais opções de alimentos<br/>
+</ol>
+
 ## Próximas features
 
 <ol>
-Usuário<br/>
-Histórico do usuário
+Mais opções de alimentos (database)
 </ol>
 
 ## Interface
