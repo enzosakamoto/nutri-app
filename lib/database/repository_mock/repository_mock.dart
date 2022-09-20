@@ -27,7 +27,7 @@ class RepositoryMock {
         'assets/images/feijao.jpg'),
     Alimento('Feijão Preto Cozido', 77, 14, 4.5, 0.5, 0, 0, 8.4, 1.9,
         'assets/images/feijao-preto.png'),
-    Alimento('Frango Grelhado', 159, 0, 32, 2.5, 0.9, 0, 0, 50,
+    Alimento('Peito de Frango Grelhado', 159, 0, 32, 2.5, 0.9, 0, 0, 50,
         'assets/images/frango-grelhado.jpg'),
     Alimento('Leite Semi-Desnatado', 40.5, 4.7, 3.15, 1, 0.6, 0, 0, 143,
         'assets/images/leite.png'),
