@@ -27,8 +27,6 @@ class RepositoryMock {
         'assets/images/feijao.jpg'),
     Alimento('Feijão Preto Cozido', 77, 14, 4.5, 0.5, 0, 0, 8.4, 1.9,
         'assets/images/feijao-preto.png'),
-    Alimento('Peito de Frango Grelhado', 159, 0, 32, 2.5, 0.9, 0, 0, 50,
-        'assets/images/frango-grelhado.jpg'),
     Alimento('Leite Semi-Desnatado', 40.5, 4.7, 3.15, 1, 0.6, 0, 0, 143,
         'assets/images/leite.png'),
     Alimento('Macarrão Tipo Espaguete Cozido', 157, 30.68, 5.76, 0.92, 0.175, 0,
@@ -37,6 +35,8 @@ class RepositoryMock {
         'assets/images/pao-forma-integral.jpg'),
     Alimento('Pasta de Amendoim Integral', 626.7, 9.3, 34.7, 52.7, 6.67, 0, 1.4,
         0, 'assets/images/pasta-amendoim.jpg'),
+    Alimento('Peito de Frango Grelhado', 159, 0, 32, 2.5, 0.9, 0, 0, 50,
+        'assets/images/frango-grelhado.jpg'),
   ];
 
   RepositoryMock();

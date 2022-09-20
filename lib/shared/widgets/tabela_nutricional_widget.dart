@@ -37,7 +37,12 @@ class TabelaNutricionalWidget extends StatelessWidget {
                 ConstrainedBox(
                     constraints:
                         const BoxConstraints(maxWidth: 150, maxHeight: 150),
-                    child: Image.asset(alimento.caminhoImagem)),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25),
+                          image: DecorationImage(
+                              image: AssetImage(alimento.caminhoImagem))),
+                    )),
                 const SizedBox(
                   height: 30,
                 ),
