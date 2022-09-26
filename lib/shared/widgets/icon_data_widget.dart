@@ -12,6 +12,6 @@ class DataIconWidget extends StatelessWidget {
             return const Datapage();
           }));
         },
-        icon: const Icon(Icons.book));
+        icon: const Icon(Icons.perm_media));
   }
 }

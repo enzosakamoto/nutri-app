@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nutri_app/datapage/pages/datapage.dart';
+import 'package:nutri_app/helppage/helppage.dart';
 import 'package:nutri_app/historypage/page/historypage.dart';
 import 'package:nutri_app/homepage/pages/homepage.dart';
 
@@ -29,6 +31,14 @@ void selectedItem(BuildContext context, int index) {
     case 1:
       Navigator.of(context)
           .push(MaterialPageRoute(builder: (context) => const Historypage()));
+      break;
+    case 2:
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => const Datapage()));
+      break;
+    case 3:
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => const Helppage()));
       break;
     default:
   }

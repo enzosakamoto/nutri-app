@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nutri_app/database/repository_mock/repository_mock.dart';
+import 'package:nutri_app/shared/themes/text_styles.dart';
 import 'package:nutri_app/shared/widgets/appbar_widget.dart';
 import 'package:nutri_app/shared/widgets/drawer_widget.dart';
 import 'package:nutri_app/shared/widgets/icon_back_widget.dart';
@@ -43,9 +44,7 @@ class Datapage extends StatelessWidget {
             child: Center(
               child: Text(
                 'Todos os dados foram obtidos por fontes externas (Tabela TACO, MyFitnessPal e entre outros).',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
+                style: AppTextStyles.bold,
                 textAlign: TextAlign.center,
               ),
             ),

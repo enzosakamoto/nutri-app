@@ -13,6 +13,7 @@ Mais opções de alimentos<br/>
 
 <ol>
 Mais opções de alimentos (database)
+Possibilidade de adicionar um alimento manualmente (database)
 </ol>
 
 ## Interface

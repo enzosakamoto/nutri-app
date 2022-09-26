@@ -53,7 +53,7 @@ class TabelaNutricionalWidget extends StatelessWidget {
                         'Tabela Nutricional do ${alimento.nome} (porção de ${gramas}g)',
                         style: AppTextStyles.titulosBold,
                         overflow: TextOverflow.fade,
-                        maxLines: 2,
+                        maxLines: 3,
                       ),
                     ),
                   ],

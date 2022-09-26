@@ -15,63 +15,63 @@ class ValoresTabelaWidget extends StatelessWidget {
         Text(
           '${alimento.kcal.toStringAsFixed(2)} kcal',
           style: AppTextStyles.normal,
-          overflow: TextOverflow.ellipsis,
+          overflow: TextOverflow.fade,
         ),
         const SizedBox(
-          height: 5,
+          height: 8,
         ),
         Text(
           '${alimento.carboidratos.toStringAsFixed(2)} g',
           style: AppTextStyles.normal,
-          overflow: TextOverflow.ellipsis,
+          overflow: TextOverflow.fade,
         ),
         const SizedBox(
-          height: 5,
+          height: 8,
         ),
         Text(
           '${alimento.proteinas.toStringAsFixed(2)} g',
           style: AppTextStyles.normal,
-          overflow: TextOverflow.ellipsis,
+          overflow: TextOverflow.fade,
         ),
         const SizedBox(
-          height: 5,
+          height: 8,
         ),
         Text(
           '${alimento.gtotais.toStringAsFixed(2)} g',
           style: AppTextStyles.normal,
-          overflow: TextOverflow.ellipsis,
+          overflow: TextOverflow.fade,
         ),
         const SizedBox(
-          height: 5,
+          height: 8,
         ),
         Text(
           '${alimento.gsaturadas.toStringAsFixed(2)} g',
           style: AppTextStyles.normal,
-          overflow: TextOverflow.ellipsis,
+          overflow: TextOverflow.fade,
         ),
         const SizedBox(
-          height: 5,
+          height: 8,
         ),
         Text(
           '${alimento.gtrans.toStringAsFixed(2)} g',
           style: AppTextStyles.normal,
-          overflow: TextOverflow.ellipsis,
+          overflow: TextOverflow.fade,
         ),
         const SizedBox(
-          height: 5,
+          height: 8,
         ),
         Text(
           '${alimento.fibra.toStringAsFixed(2)} g',
           style: AppTextStyles.normal,
-          overflow: TextOverflow.ellipsis,
+          overflow: TextOverflow.fade,
         ),
         const SizedBox(
-          height: 5,
+          height: 8,
         ),
         Text(
           '${alimento.sodio.toStringAsFixed(2)} mg',
           style: AppTextStyles.normal,
-          overflow: TextOverflow.ellipsis,
+          overflow: TextOverflow.fade,
         ),
       ],
     );

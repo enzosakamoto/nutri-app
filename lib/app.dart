@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nutri_app/helppage/helppage.dart';
 import 'package:nutri_app/homepage/pages/homepage.dart';
 
 class MyApp extends StatelessWidget {
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Nutri App',
-      home: Homepage(),
+      home: Helppage(),
     );
   }
 }

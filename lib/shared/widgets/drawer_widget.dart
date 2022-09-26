@@ -11,6 +11,18 @@ class DrawerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     UsuarioSingleton usuario = UsuarioSingleton();
+    List<String> categoriasDrawer = [
+      'Home',
+      'Histórico',
+      'Database',
+      'Sobre',
+    ];
+    List<IconData> icones = [
+      Icons.home,
+      Icons.history,
+      Icons.perm_media,
+      Icons.help,
+    ];
     return Drawer(
       child: Material(
         color: AppColors.salmao,
@@ -28,30 +40,23 @@ class DrawerWidget extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                children: [
-                  menuItemWidget(
-                      texto: 'Home',
-                      icone: Icons.home,
-                      onClicked: () => selectedItem(context, 0)),
-                ],
+            ListView.builder(
+              shrinkWrap: true,
+              itemBuilder: (context, index) => Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    menuItemWidget(
+                        texto: categoriasDrawer[index],
+                        icone: icones[index],
+                        onClicked: () => selectedItem(context, index)),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                  ],
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                children: [
-                  menuItemWidget(
-                      texto: 'Histórico',
-                      icone: Icons.history,
-                      onClicked: () => selectedItem(context, 1)),
-                ],
-              ),
+              itemCount: categoriasDrawer.length,
             ),
           ],
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nutri_app/database/singleton/usuario_singleton.dart';
+import 'package:nutri_app/shared/themes/text_styles.dart';
 import 'package:nutri_app/shared/widgets/appbar_widget.dart';
 import 'package:nutri_app/shared/widgets/drawer_widget.dart';
 import 'package:nutri_app/shared/widgets/icon_back_widget.dart';
@@ -11,6 +12,8 @@ class Historypage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     UsuarioSingleton usuario = UsuarioSingleton();
+    bool historicoVazio = true;
+    if (usuario.alimentos.isNotEmpty) historicoVazio = false;
     return Scaffold(
       drawer: const DrawerWidget(),
       appBar: const PreferredSize(
@@ -26,6 +29,24 @@ class Historypage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: const [
                 IconBackWidget(),
+              ],
+            ),
+          ),
+          Visibility(
+            visible: historicoVazio,
+            child: Column(
+              children: const [
+                SizedBox(
+                  height: 15,
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 32),
+                  child: Text(
+                    'Converta algum alimento na Homepage para aparecer aqui!',
+                    textAlign: TextAlign.center,
+                    style: AppTextStyles.texto18bold,
+                  ),
+                ),
               ],
             ),
           ),

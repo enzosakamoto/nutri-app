@@ -3,9 +3,9 @@
 import 'package:nutri_app/database/modules/alimento/alimento.dart';
 
 class UsuarioSingleton {
-  final nome = 'Heitor Mariano';
-  final email = 'heitas.marias@gmail.com';
-  final avatar = 'assets/images/heitor.png';
+  final nome = 'Guest';
+  final email = 'guest@email.com';
+  final avatar = 'assets/images/guest.png';
   late List<Alimento> alimentos = [];
   late List<double> listaGramas = [];
 

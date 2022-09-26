@@ -6,70 +6,30 @@ class CategoriasTabelaWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> categorias = [
+      'Valor Energético',
+      'Carboidratos',
+      'Proteínas',
+      'Gorduras Totais',
+      'Gorduras Saturadas',
+      'Gorduras Trans',
+      'Fibras',
+      'Sódio',
+    ];
     return Flexible(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          Text(
-            'Valor Energético',
-            style: AppTextStyles.normal,
-            overflow: TextOverflow.ellipsis,
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Text(
-            'Carboidratos',
-            style: AppTextStyles.normal,
-            overflow: TextOverflow.ellipsis,
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Text(
-            'Proteínas',
-            style: AppTextStyles.normal,
-            overflow: TextOverflow.ellipsis,
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Text(
-            'Gorduras Totais',
-            style: AppTextStyles.normal,
-            overflow: TextOverflow.ellipsis,
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Text(
-            'Gorduras Saturadas',
-            style: AppTextStyles.normal,
-            overflow: TextOverflow.ellipsis,
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Text(
-            'Gorduras Trans',
-            style: AppTextStyles.normal,
-            overflow: TextOverflow.ellipsis,
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Text(
-            'Fibras',
-            style: AppTextStyles.normal,
-            overflow: TextOverflow.ellipsis,
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Text(
-            'Sódio',
-            style: AppTextStyles.normal,
-            overflow: TextOverflow.ellipsis,
+        children: [
+          ListView.builder(
+            shrinkWrap: true,
+            itemBuilder: (context, index) => Padding(
+                padding: const EdgeInsets.symmetric(vertical: 4),
+                child: Text(
+                  categorias[index],
+                  style: AppTextStyles.normal,
+                  overflow: TextOverflow.ellipsis,
+                )),
+            itemCount: categorias.length,
           ),
         ],
       ),
