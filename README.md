@@ -12,7 +12,7 @@ Mais opções de alimentos<br/>
 ## Próximas features
 
 <ol>
-Mais opções de alimentos (database)
+Mais opções de alimentos (database)<br/>
 Possibilidade de adicionar um alimento manualmente (database)
 </ol>
 
