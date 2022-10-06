@@ -7,6 +7,7 @@ Aplicativo que armazena diversos dados sobre alimentos (tabelas nutricionais) e 
 Usuário<br/>
 Histórico do Usuário<br/>
 Mais opções de alimentos<br/>
+Drawer<br/>
 </ol>
 
 ## Próximas features
@@ -18,6 +19,11 @@ Possibilidade de adicionar um alimento manualmente (database)
 
 ## Interface
 <p align="center">
-<img src="https://user-images.githubusercontent.com/98707474/190944240-0544e155-7024-4414-bbeb-2079beeb3acd.png">
-<img src="https://user-images.githubusercontent.com/98707474/190944225-b5c053ce-820f-4fb3-907c-764afabc0ab7.png">
+<img src="https://user-images.githubusercontent.com/98707474/194436111-19ecded0-bff0-4260-bbf1-827935e9abea.png">
+<img src="https://user-images.githubusercontent.com/98707474/194436119-e519c6b9-0669-4fb0-a9ee-5ae1bbae792b.png">
 </p>
+<p align="center">
+<img src="https://user-images.githubusercontent.com/98707474/194436121-e755f7dd-c10b-4c98-b213-03348d93137d.png">
+<img src="https://user-images.githubusercontent.com/98707474/194436129-3b685343-1571-4767-93cc-62706e106343.png">
+</p>
+
