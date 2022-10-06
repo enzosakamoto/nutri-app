@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nutri_app/database/singleton/usuario_singleton.dart';
-import 'package:nutri_app/shared/themes/text_styles.dart';
 import 'package:nutri_app/shared/widgets/appbar_widget.dart';
 import 'package:nutri_app/shared/widgets/container_texto_widget.dart';
 import 'package:nutri_app/shared/widgets/drawer_widget.dart';
