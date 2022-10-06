@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nutri_app/database/singleton/usuario_singleton.dart';
 import 'package:nutri_app/shared/themes/text_styles.dart';
 import 'package:nutri_app/shared/widgets/appbar_widget.dart';
+import 'package:nutri_app/shared/widgets/container_texto_widget.dart';
 import 'package:nutri_app/shared/widgets/drawer_widget.dart';
 import 'package:nutri_app/shared/widgets/icon_back_widget.dart';
 import 'package:nutri_app/shared/widgets/tabela_nutricional_widget.dart';
@@ -41,10 +42,11 @@ class Historypage extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 32),
-                  child: Text(
-                    'Converta algum alimento na Homepage para aparecer aqui!',
-                    textAlign: TextAlign.center,
-                    style: AppTextStyles.texto18bold,
+                  child: ContainerTextoWidget(
+                    titulo: 'Aviso',
+                    conteudo:
+                        'Converta algum alimento na Homepage para aparecer aqui!',
+                    centralizado: true,
                   ),
                 ),
               ],
